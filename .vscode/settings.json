@@ -3,5 +3,7 @@
     "python.analysis.extraPaths": [
         "${workspaceFolder}/../venv/Lib/site-packages",
         "${workspaceFolder}"
-    ]
+    ],
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.diagnosticMode": "openFilesOnly"
 }
