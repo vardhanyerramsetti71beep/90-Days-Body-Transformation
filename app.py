@@ -22,6 +22,9 @@ app = Flask(__name__, template_folder=template_dir)
 handler = app
 
 @app.route("/")
+@app.route("/index")
+@app.route("/index.html")
+@app.route("/app")
 def index():
     progress = fe.load_progress()
     current_day = progress.get("current_day", 1)
@@ -41,6 +44,13 @@ def index():
                            user_prof=user_prof, 
                            macros=macros,
                            meal_plan=meal_plan)
+
+@app.errorhandler(404)
+def handle_404(e):
+    # If the user or platform navigates to an unrecognized path, serve the main dashboard
+    if not request.path.startswith("/api/"):
+        return index()
+    return jsonify({"error": "Not Found", "path": request.path}), 404
 
 @app.route("/api/day/<int:day>")
 def get_day(day):
