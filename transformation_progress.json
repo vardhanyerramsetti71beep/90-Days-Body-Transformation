@@ -1,0 +1,123 @@
+{
+    "current_day": 1,
+    "weight_history": [
+        {
+            "day": 1,
+            "weight_kg": 75.0,
+            "waist_cm": 88.0,
+            "hips_cm": 98.0,
+            "date": "2026-10-02"
+        },
+        {
+            "day": 1,
+            "weight_kg": 70.0,
+            "waist_cm": 82.0,
+            "hips_cm": 98.0,
+            "date": "2026-10-02"
+        }
+    ],
+    "completed_workouts": {
+        "1": [],
+        "90": []
+    },
+    "punishment_ledger": [
+        {
+            "day": 1,
+            "timestamp": "2026-10-02 22:24:47",
+            "completed_pct": 20.0,
+            "deficit_pct": 80.0,
+            "tier": "LEVEL 3: TOTAL SURRENDER (Under 40% Completed / Skipped)",
+            "punishment_title": "THE 10,000 STEP SENTENCE",
+            "punishment_task": "10,000 Extra Steps on top of daily baseline",
+            "cardio_debt": "Non-negotiable calorie deficit",
+            "paid": true
+        },
+        {
+            "day": 90,
+            "timestamp": "2026-10-02 22:29:13",
+            "completed_pct": 0.0,
+            "deficit_pct": 100.0,
+            "tier": "LEVEL 3: TOTAL SURRENDER (Under 40% Completed / Skipped)",
+            "punishment_title": "THE ICE WATER & FASTING DECREE",
+            "punishment_task": "5-Minute Ice Cold Shower + 16-Hour Strict Intermittent Fast (No sugar for 7 days)",
+            "cardio_debt": "Dopamine & cortisol reset",
+            "paid": true
+        },
+        {
+            "day": 1,
+            "timestamp": "2026-10-03 00:28:24",
+            "completed_pct": 0.0,
+            "deficit_pct": 100.0,
+            "tier": "LEVEL 3: TOTAL SURRENDER (Under 40% Completed / Skipped)",
+            "punishment_title": "THE 10,000 STEP SENTENCE",
+            "punishment_task": "10,000 Extra Steps on top of daily baseline",
+            "cardio_debt": "Non-negotiable calorie deficit",
+            "paid": false
+        }
+    ],
+    "user_profile": {
+        "weight_kg": 74.0,
+        "height_cm": 175.0,
+        "age": 25,
+        "gender": "male",
+        "activity_level": "moderate"
+    },
+    "workout_sessions": [],
+    "physique_scans": [
+        {
+            "timestamp": "2026-10-02 22:51:27",
+            "scan_type": "full_body",
+            "scores": {
+                "belly_bloat_index": 95,
+                "glute_lift_potential": 53,
+                "posture_score": 74,
+                "pelvic_tilt": "Anterior Pelvic Tilt (Correctable)"
+            },
+            "action_plan": [
+                "Perform 5 sets of Stomach Vacuums immediately upon waking. Add Hanging Leg Raises to hypertrophy lower rectus abdominis.",
+                "Prioritize heavy Barbell Hip Thrusts with a 2-second isometric pause at top, followed by Romanian Deadlifts for glute-ham tie-in.",
+                "Perform Seated Cable Rows & Lat Pulldowns to broaden the upper back, creating an aesthetic V-taper / hourglass illusion that slims the waist."
+            ]
+        },
+        {
+            "timestamp": "2026-10-02 23:09:31",
+            "scan_type": "full_body",
+            "scores": {
+                "belly_bloat_index": 72,
+                "glute_lift_potential": 64,
+                "posture_score": 68,
+                "pelvic_tilt": "Anterior Pelvic Tilt (Correctable)"
+            },
+            "action_plan": [
+                "Perform 5 sets of Stomach Vacuums immediately upon waking. Add Hanging Leg Raises to hypertrophy lower rectus abdominis.",
+                "Prioritize heavy Barbell Hip Thrusts with a 2-second isometric pause at top, followed by Romanian Deadlifts for glute-ham tie-in.",
+                "Perform Seated Cable Rows & Lat Pulldowns to broaden the upper back, creating an aesthetic V-taper / hourglass illusion that slims the waist."
+            ]
+        },
+        {
+            "timestamp": "2026-10-02 23:10:05",
+            "scan_type": "butt",
+            "scores": {
+                "belly_bloat_index": 71,
+                "glute_lift_potential": 64,
+                "posture_score": 69,
+                "pelvic_tilt": "Anterior Pelvic Tilt (Correctable)"
+            },
+            "action_plan": [
+                "Prioritize heavy Barbell Hip Thrusts with a 2-second isometric pause at top, followed by Romanian Deadlifts for glute-ham tie-in.",
+                "Perform Seated Cable Rows & Lat Pulldowns to broaden the upper back, creating an aesthetic V-taper / hourglass illusion that slims the waist."
+            ]
+        }
+    ],
+    "vitals": {
+        "heart_rate_bpm": 130,
+        "resting_hr_bpm": 60,
+        "blood_oxygen_pct": 99.0,
+        "blood_pressure_sys": 116,
+        "blood_pressure_dia": 76,
+        "hrv_ms": 62,
+        "daily_steps": 9500,
+        "step_goal": 10000,
+        "active_calories": 520.0
+    }
+}
