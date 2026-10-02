@@ -1544,10 +1544,31 @@ class PhysiqueAnalyzer:
 # 8. LOCAL PERSISTENCE (STATE & PROGRESS LEDGER)
 # ---------------------------------------------------------
 
-DATA_FILE = "transformation_progress.json"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_FILE = os.path.join(BASE_DIR, "transformation_progress.json")
+
+def _get_data_filepath():
+    # If running on Vercel or read-only container, use /tmp
+    if os.environ.get("VERCEL") or not os.access(BASE_DIR, os.W_OK):
+        tmp_file = os.path.join("/tmp", "transformation_progress.json")
+        if not os.path.exists(tmp_file) and os.path.exists(DATA_FILE):
+            try:
+                import shutil
+                shutil.copyfile(DATA_FILE, tmp_file)
+            except Exception:
+                pass
+        return tmp_file
+    return DATA_FILE
 
 def load_progress():
-    if os.path.exists(DATA_FILE):
+    target = _get_data_filepath()
+    if os.path.exists(target):
+        try:
+            with open(target, "r") as f:
+                return json.load(f)
+        except Exception:
+            pass
+    elif os.path.exists(DATA_FILE):
         try:
             with open(DATA_FILE, "r") as f:
                 return json.load(f)
@@ -1579,5 +1600,15 @@ def load_progress():
     }
 
 def save_progress(data):
-    with open(DATA_FILE, "w") as f:
-        json.dump(data, f, indent=4)
+    target = _get_data_filepath()
+    try:
+        with open(target, "w") as f:
+            json.dump(data, f, indent=4)
+    except Exception:
+        # Fallback to /tmp if primary path is read-only
+        try:
+            tmp_path = os.path.join("/tmp", "transformation_progress.json")
+            with open(tmp_path, "w") as f:
+                json.dump(data, f, indent=4)
+        except Exception:
+            pass

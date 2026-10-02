@@ -15,8 +15,11 @@ import plotly.graph_objects as go  # type: ignore
 from plotly.subplots import make_subplots  # type: ignore
 import numpy as np  # type: ignore
 import fitness_engine as fe
+base_dir = os.path.dirname(os.path.abspath(__file__))
+template_dir = os.path.join(base_dir, "templates")
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder=template_dir)
+handler = app
 
 @app.route("/")
 def index():
